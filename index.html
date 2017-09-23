@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+    <style type="text/css">
+      html {
+        background-color: #000;
+      }
+      body {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+    </style>
+  </head>
+  <body class="framework7-root" style="">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views toolbar-through">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main" data-page="tabs-swipeable">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left sliding" style="font-size: 16px;">
+              <img src="images/default.png" height="22px" width="22px" style="border-radius: 100%; margin-right: 10px; margin-left: 7px;">
+              <img src="images/search.png" height="22px" width="22px" style="border-radius: 100%; margin-right: 10px;">
+              <span id="title">Chat</span>
+            </div>
+            <div class="right sliding" style="font-size: 16px;">
+              <span id="newchat"><img src="images/newchat.png" height="22px" width="22px" style="margin-left: 10px; margin-right: 7px;"></span>
+            </div>
+            <!-- <div class="subnavbar">
+              <div class="buttons-row">
+                <a href="#tab1" class="button active tab-link">Tab 1</a>
+                <a href="#tab2" class="button tab-link">Tab 2</a>
+                <a href="#tab3" class="button tab-link">Tab 3</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="pages navbar-through">
+          <div data-page="tabs-swipeable" class="page">
+            <div class="tabs-swipeable-wrap swiper-container swiper-container-horizontal" style="
+    background: #c348f9;
+">
+              <div class="tabs swiper-wrapper">
+                <div id="tab1" class="page-content tab swiper-slide swiper-slide-active active" style="height: 92%;bottom: 0;top: 8%;background: #FFFFFF;border-top-right-radius: 16px;border-top-left-radius: 16px;">
+                  <!-- div class="content-block" style="color: #000;">
+                    <center><p class="">Add some friends to receive snaps!</p></center>
+                  </div> -->
+                  <div class="list-block" style="margin-top: -44px;">
+                    <ul>
+                      <li>
+                        <a href="chat.php?username=Joseph" class="item-link item-content view-chat">
+                          <div class="item-media"><img src="images/read.png" width="25px" height="25px"></div>
+                          <div class="item-inner">
+                            <div class="item-title">Joseph</div>
+                            <div class="item-after" style="color: #000;">3🔥😊</div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="chat.php?username=Patrick" class="item-link item-content view-chat">
+                          <div class="item-media"><img src="images/read.png" width="25px" height="25px"></div>
+                          <div class="item-inner">
+                            <div class="item-title">Patrick</div>
+                            <div class="item-after" style="color: #000;">7🔥😊</div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="chat.php?username=Dylan" class="item-link item-content view-chat">
+                          <div class="item-media"><img src="images/read.png" width="25px" height="25px"></div>
+                          <div class="item-inner">
+                            <div class="item-title">Dylan</div>
+                            <div class="item-after" style="color: #000;">19🔥😊</div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="tab2" class="page-content tab swiper-slide" style="height: 92%;bottom: 0;top: 8%;background: #FFFFFF;border-top-right-radius: 16px;border-top-left-radius: 16px;">
+                  <center><img src="images/camera.png" width="50%" style="margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0;"></center>
+                </div>
+                <div id="tab3" class="page-content tab swiper-slide" style="height: 92%;bottom: 0;top: 8%;background: #FFFFFF;border-top-right-radius: 16px;border-top-left-radius: 16px;">
+                  <div class="list-block" style="margin-top: -44px;">
+                    <ul>
+                      <li class="item-content" onclick="showStory(['images/camera.png','images/default_story.jpg',]);">
+                        <div class="item-media"><img src="images/default_story.jpg" style="border-radius: 100%;" width="40px" height="40px"></div>
+                        <div class="item-inner">
+                          <div class="item-title">My Story</div>
+                          <div class="item-after" style="color: #000;"><img src="images/mystories.png" width="24px" height="24px"></div>
+                        </div>
+                      </li>
+                      <li class="item-content">
+                        <div class="item-media"><img src="images/default_story.jpg" style="border-radius: 100%;" width="40px" height="40px"></div>
+                        <div class="item-inner">
+                          <div class="item-title">Our Story</div>
+                          <div class="item-after" style="color: #000;"><img src="images/mystories.png" width="24px" height="24px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                    <center><div class="content-block-title no-span" style="font-size: 9.5px;"><span>R E C E N T &nbsp; U P D A T E S</span></div></center>
+                    <ul>
+                      <li class="item-content" onclick="showStory(['images/1.jpg',]);">
+                        <div class="item-media"><img src="images/1.jpg" style="border-radius: 100%;" width="40px" height="40px"></div>
+                        <div class="item-inner">
+                          <div class="item-title">Joseph</div>
+                          <!-- <div class="item-after" style="color: #000;"><img src="images/mystories.png" width="24px" height="24px"></div> -->
+                        </div>
+                      </li>
+                      <li class="item-content" onclick="showStory(['images/2.jpg','images/3.jpg',]);">
+                        <div class="item-media"><img src="images/3.jpg" style="border-radius: 100%;" width="40px" height="40px"></div>
+                        <div class="item-inner">
+                          <div class="item-title">HitlerBae</div>
+                          <!-- <div class="item-after" style="color: #000;"><img src="images/mystories.png" width="24px" height="24px"></div> -->
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="toolbar" style="height: 60px;">
+          <div class="toolbar-inner">
+            <a href="#tab1" class="link tab-link" style="margin-top: 13px;">
+              <img src="images/gotmessages.png" width="32px" height="32px">
+            </a>
+            <a href="#tab2" class="link tab-link" style="line-height: 60px; height: 70px;">
+              <img src="images/camera_button.png" width="50px" height="50px">
+            </a>
+            <a style="opacity: 0;" href="#tab3" class="link tab-link">
+              <img src="images/camera_button.png" width="50px" height="50px">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <div class="login-screen modal-in">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content ios snapchat-color" id="start_screen">
+            <div id="login" style="display: none;">
+              <div style="margin-bottom: 15px;"></div>
+              <a href="index.html" class="link" style="margin-left: 15px;" onclick="backToChoose();"> <i class="icon icon-back"></i></a>
+              <center><div class="title">Log In</div></center>
+              <div class="list" style="position: fixed; top: 35%; width: 85%; transform: translate(-50%, -50%); left: 50%;">
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">USERNAME OR EMAIL</div>
+                      <div class="item-input-wrap">
+                        <input type="text" placeholder="">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">PASSWORD</div>
+                      <div class="item-input-wrap">
+                        <input type="password" placeholder="">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li style="height: 0%;"></li>
+                </ul>
+                <br>
+                <center><a href="#" style="font-size: 13px;">Forgot your password?</a></center>
+                <br>
+                <a href="#" class="button button-big button-fill button-round" style="width: 77%; background: #12cccc; margin-left: auto; margin-right: auto;">Log In</a>
+              </div>
+            </div>
+            <div id="register" style="display: none;">
+              <div style="margin-bottom: 15px;"></div>
+              <a href="index.html" class="link" style="margin-left: 15px;" onclick="backToChoose();"> <i class="icon icon-back"></i></a>
+              <center><div class="title">What's your name?</div></center>
+              <div class="list" style="position: fixed; top: 35%; width: 85%; transform: translate(-50%, -50%); left: 50%;">
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">FIRST NAME</div>
+                      <div class="item-input-wrap">
+                        <input type="text" placeholder="">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">LAST NAME</div>
+                      <div class="item-input-wrap">
+                        <input type="password" placeholder="">
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li style="height: 0%;"></li>
+                </ul>
+                <br>
+                <p style="font-size: 13px; margin-top: -4%; margin-left: 5%;">By tapping Sign Up & Accept, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                <br>
+                <a href="#" class="button button-big button-fill button-round" style="width: 77%; background: #12cccc; margin-left: auto; margin-right: auto;">Sign Up & Accept</a>
+              </div>
+            </div>
+            <div id="choose" style="display: block;">
+              <img src="images/snpchat.png" width="20%" class="center-snap">
+              <div class="list-block" style="position: absolute; bottom: 0; width: 100%; left: 0; margin-bottom: 0;">
+                <ul style="background-color: rgba(255,91,91, 0.9); color: #FFF; height: 10%;">
+                  <li style="height: 70px; font-size: 24px;">
+                    <a href="#" class="item-link list-button" onclick="loginScreen();" style="color: #FFF; text-align: center; vertical-align: middle; line-height: 70px;">
+                      LOG IN
+                    </a>
+                  </li>
+                </ul>
+                <ul style="background-color: rgba(59,171,255, 0.9); color: #FFF; height: 10%;">
+                  <li style="height: 70px; font-size: 24px;">
+                    <a href="#" class="item-link list-button" onclick="registerScreen();" style="color: #FFF; text-align: center; vertical-align: middle; line-height: 70px;">
+                      SIGN UP
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <video autoplay loop id="video-background" muted plays-inline>
+            <!-- <source src="images/stock.mp4" type="video/mp4"> -->
+          </video>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
