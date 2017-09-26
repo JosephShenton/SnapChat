@@ -1,10 +1,14 @@
+<!-- 
+  Username: Admin
+  Password: 1234567890
+-->
 <!DOCTYPE html>
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
+    <title>SnapChat</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <!-- Path to your custom app styles-->
@@ -180,7 +184,7 @@
                     <div class="item-inner">
                       <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">USERNAME OR EMAIL</div>
                       <div class="item-input-wrap">
-                        <input type="text" placeholder="">
+                        <input type="text" id="username_login" placeholder="">
                         <span class="input-clear-button"></span>
                       </div>
                     </div>
@@ -189,7 +193,7 @@
                     <div class="item-inner">
                       <div class="item-title item-label" style="color: #c8c8c8;font-size: 13px;font-weight: 500;">PASSWORD</div>
                       <div class="item-input-wrap">
-                        <input type="password" placeholder="">
+                        <input type="password" id="password_login" placeholder="">
                         <span class="input-clear-button"></span>
                       </div>
                     </div>
@@ -199,7 +203,7 @@
                 <br>
                 <center><a href="#" style="font-size: 13px;">Forgot your password?</a></center>
                 <br>
-                <a href="#" class="button button-big button-fill button-round" style="width: 77%; background: #12cccc; margin-left: auto; margin-right: auto;">Log In</a>
+                <a href="#" class="button button-big button-fill button-round" onclick="login($$('#username_login').val(), $$('#password_login').val());" style="width: 77%; background: #12cccc; margin-left: auto; margin-right: auto;">Log In</a>
               </div>
             </div>
             <div id="register" style="display: none;">
@@ -255,7 +259,7 @@
             </div>
           </div>
           <video autoplay loop id="video-background" muted plays-inline>
-            <!-- <source src="images/stock.mp4" type="video/mp4"> -->
+            <source src="images/stock.mp4" type="video/mp4">
           </video>
         </div>
       </div>

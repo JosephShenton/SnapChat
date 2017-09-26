@@ -334,15 +334,25 @@ function backToChoose() {
     $$("#register").hide();
 }
 
-var errorCallback = function(e) { 
-    console.log('Rejected', e); 
-};
+function login($username, $password) {
+    $$.post('api/v1/login.php', {username: $username, password: $password}, function (data) {
+      if (data == "Logged In.") {
+        myApp.closeModal('.login-screen');
+      } else {
+        myApp.alert(data, "SnapChat");
+      }
+    });
+}
 
-// Not showing vendor prefixes.
-navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) { 
-    var video = document.getElementById('video-background'); 
-    video.src = window.URL.createObjectURL(localMediaStream); 
-    video.onloadedmetadata = function(e) {
+// var errorCallback = function(e) { 
+//     console.log('Rejected', e); 
+// };
 
-    }; 
-}, errorCallback);
+// // Not showing vendor prefixes.
+// navigator.getUserMedia({video: true, audio: true}, function(localMediaStream) { 
+//     var video = document.getElementById('video-background'); 
+//     video.src = window.URL.createObjectURL(localMediaStream); 
+//     video.onloadedmetadata = function(e) {
+
+//     }; 
+// }, errorCallback);
